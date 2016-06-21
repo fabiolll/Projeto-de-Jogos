@@ -1,4 +1,5 @@
 Generic g;
+GameLoop game;
 
 /* Background image */
 PImage bg;
@@ -14,6 +15,7 @@ void setup(){
     bg = loadImage("space-bck.png");
 
     g = new Generic(50, 50, 60, 60, color(255, 204, 0));
+    game = new GameLoop(20);
 }
 
 void draw(){
