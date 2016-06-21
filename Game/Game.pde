@@ -1,4 +1,4 @@
-Generic g;
+/* The game loop */
 GameLoop game;
 
 /* Background image */
@@ -14,7 +14,6 @@ void setup(){
      */
     bg = loadImage("space-bck.png");
 
-    g = new Generic(50, 50, 60, 60, color(255, 204, 0));
     game = new GameLoop(20);
 }
 
@@ -23,4 +22,5 @@ void draw(){
     background(bg);
 
     game.draw();
+    game.move();
 }

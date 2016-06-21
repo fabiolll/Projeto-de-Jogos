@@ -25,15 +25,24 @@ class GameLoop {
         }
     }
 
+    public void move(){
+        for (Shape shape : this.shapes){
+            shape.move(); 
+        } 
+    }
+
     /* Support Methods */
     private Shape randomShape(){
         Shape shape;
-        switch((int)random(0, 1)){
+        switch((int)random(0, 3)){
             case 0:
                 shape = new Ellipse(this.default_width, this.default_height, 50, 50, randomColor());
                 break;
+            case 1:
+                shape = new Triangle(this.default_width, this.default_height, 50, 50, randomColor());
+                break;
             default:
-                shape = new Generic(this.default_width, this.default_height, 50, 50, randomColor());
+                shape = new Rectangle(this.default_width, this.default_height, 50, 50, randomColor());
         }
         
         return shape;
@@ -72,9 +81,9 @@ class GameLoop {
                 cor = color(128, 128, 128);
                 break;
             /* Black */
-            case 7:
-                cor = color(0, 0, 0);
-                break;
+            //case 7:
+            //    cor = color(0, 0, 0);
+            //    break;
             /* White */
             case 8:
                 cor = color(255, 255, 255);
