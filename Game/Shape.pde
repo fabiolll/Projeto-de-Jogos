@@ -1,10 +1,13 @@
 abstract class Shape {
 
     private float x, y;
+    private float largura, altura;
     private color cor;
 
     /* Constructors */
-    public Shape(float x, float y, color cor){
+    public Shape(float largura, float altura, float x, float y, color cor){
+        this.largura = largura;
+        this.altura = altura;
         this.x = x;
         this.y = y;
         this.cor = cor;
@@ -12,12 +15,11 @@ abstract class Shape {
 
     /* Methods */
     public void move(){
-    
+        this.y += 3;    
     }
 
-    public void draw(){
-    
-    }
+    /* All subclasses must override draw */
+    public abstract void draw();
 
     /*public String toString(){
         return null;    
@@ -46,5 +48,21 @@ abstract class Shape {
 
     public void setCor(color cor){
         this.cor = cor; 
+    }
+
+    public float getLargura(){
+        return this.largura; 
+    }
+
+    public void setLargura(float largura){
+        this.largura = largura; 
+    }
+
+    public float getAltura(){
+        return this.altura; 
+    }
+
+    public void setAltura(float altura){
+        this.altura = altura; 
     }
 }
