@@ -22,6 +22,5 @@ void draw(){
     /* To redraw the background, removing past draws */
     background(bg);
 
-    g.move();
-    g.draw();  
+    game.draw();
 }
