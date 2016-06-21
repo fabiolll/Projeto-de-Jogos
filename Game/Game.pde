@@ -1,7 +1,8 @@
 Generic g;
 
 void setup(){
-    background(255);
+    size(1280, 720);
+    background(loadImage("space-bck.png"));
     g = new Generic(50, 50, 60, 60, color(255, 204, 0));
 }
 
