@@ -24,4 +24,7 @@ void draw(){
     game.draw();
     game.move();
     game.renewShape();
+    if(game.checkCollision()){
+        println("Game over");
+    }
 }

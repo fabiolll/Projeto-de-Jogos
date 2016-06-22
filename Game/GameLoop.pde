@@ -6,6 +6,8 @@ class GameLoop {
     /* Hard coded element size */
     private int default_width = 50;
     private int default_height = 50;
+    
+    private Nave nave;
 
     /* Constructors */
     public GameLoop(int quantity){
@@ -16,6 +18,8 @@ class GameLoop {
         for(int i = 0; i < this.quantity; i++){
             this.shapes.add(randomShape());
         }
+        
+        this.nave = new Nave(50, 50, 50, 50, randomColor());
         
     }
 
@@ -36,9 +40,9 @@ class GameLoop {
         }
     }
 
-    public boolean checkCollision(Nave nave){
+    public boolean checkCollision(){
         for (Shape shape : this.shapes){
-            if (shape.checkCollision(nave)){
+            if (shape.checkCollision(this.nave)){
                 return true; 
             } 
         } 
