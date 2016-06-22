@@ -14,7 +14,7 @@ void setup(){
      */
     bg = loadImage("space-bck.png");
 
-    game = new GameLoop(20);
+    game = new GameLoop(40);
 }
 
 void draw(){
@@ -23,4 +23,5 @@ void draw(){
 
     game.draw();
     game.move();
+    game.renewShape();
 }

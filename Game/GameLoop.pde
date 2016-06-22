@@ -16,9 +16,26 @@ class GameLoop {
         for(int i = 0; i < this.quantity; i++){
             this.shapes.add(randomShape());
         }
+        
     }
 
     /* Methods */
+    public void renewShape(){
+        ArrayList toRemove = new ArrayList<Shape>();
+        
+        for (Shape shape : this.shapes) {
+            if (shape.getY() >= height) {
+                toRemove.add(shape);
+            }
+        }
+        
+        this.shapes.removeAll(toRemove);
+        
+        for (int i = 0; i < toRemove.size(); i++){
+            this.shapes.add(randomShape());
+        }
+    }
+
     public void draw(){
         for (Shape shape : this.shapes){
             shape.draw();
@@ -32,6 +49,14 @@ class GameLoop {
     }
 
     /* Support Methods */
+    private float randomY(){
+        return (random(1, (height - 1)) + height) * -1; 
+    }
+    
+    private float randomX(){
+        return random(1, (width - 1));
+    }
+
     private Shape randomShape(){
         Shape shape;
         switch((int)random(0, 3)){
@@ -44,6 +69,9 @@ class GameLoop {
             default:
                 shape = new Rectangle(this.default_width, this.default_height, 50, 50, randomColor());
         }
+        
+        shape.setX(randomX());
+        shape.setY(randomY());
         
         return shape;
     }
