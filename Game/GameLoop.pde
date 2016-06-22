@@ -36,6 +36,16 @@ class GameLoop {
         }
     }
 
+    public boolean checkCollision(Nave nave){
+        for (Shape shape : this.shapes){
+            if (shape.checkCollision(nave)){
+                return true; 
+            } 
+        } 
+
+        return false;
+    }
+
     public void draw(){
         for (Shape shape : this.shapes){
             shape.draw();

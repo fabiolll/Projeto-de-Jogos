@@ -26,4 +26,8 @@ class Triangle extends Shape {
         );
     }
 
+    @Override
+    public boolean checkCollision(Shape shape){
+        return false;
+    }
 }

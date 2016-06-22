@@ -21,6 +21,9 @@ abstract class Shape {
     /* All subclasses must override draw */
     public abstract void draw();
 
+    /* All subclasses must override check collision */
+    public abstract boolean checkCollision(Shape shape);
+
     /*public String toString(){
         return null;    
     }*/

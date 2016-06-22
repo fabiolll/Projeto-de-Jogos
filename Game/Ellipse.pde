@@ -12,4 +12,9 @@ class Ellipse extends Shape {
         fill(super.cor);
         ellipse(super.x, super.y, super.largura, super.altura); 
     }
+    
+    @Override
+    public boolean checkCollision(Shape shape){
+        return false;
+    }
 }

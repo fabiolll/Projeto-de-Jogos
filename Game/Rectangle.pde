@@ -21,4 +21,9 @@ class Rectangle extends Shape {
             super.altura
         );
     }
+    
+    @Override
+    public boolean checkCollision(Shape shape){
+        return false;
+    }
 }
