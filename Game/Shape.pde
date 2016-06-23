@@ -23,6 +23,12 @@ abstract class Shape {
 
     /* All subclasses must override check collision */
     public abstract boolean checkCollision(Shape shape);
+    
+    /* All subclasses must override get area */
+    public abstract ArrayList<Point> getVertices();
+    
+    /* All subclasses must override isInside */
+    public abstract boolean isInside(ArrayList<Point> points);
 
     /*public String toString(){
         return null;    
@@ -45,14 +51,6 @@ abstract class Shape {
         this.y = y; 
     }
 
-    public color getCor(){
-        return this.cor;  
-    }
-
-    public void setCor(color cor){
-        this.cor = cor; 
-    }
-
     public float getLargura(){
         return this.largura; 
     }
@@ -67,5 +65,13 @@ abstract class Shape {
 
     public void setAltura(float altura){
         this.altura = altura; 
+    }
+    
+    public void setCor(color cor){
+        this.cor = cor; 
+    }
+    
+    public color getCor(){
+        return this.cor; 
     }
 }

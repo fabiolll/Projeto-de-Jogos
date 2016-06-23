@@ -3,6 +3,7 @@ GameLoop game;
 
 /* Background image */
 PImage bg;
+PImage bgover;
 
 void setup(){
     /* Set the size of the screen */
@@ -13,18 +14,19 @@ void setup(){
      * The image must be the same size as the screen
      */
     bg = loadImage("space-bck.png");
+    bgover = loadImage("gameover.jpg");
 
-    game = new GameLoop(40);
+    game = new GameLoop(30);
 }
 
 void draw(){
-    /* To redraw the background, removing past draws */
-    background(bg);
-
-    game.draw();
-    game.move();
-    game.renewShape();
-    if(game.checkCollision()){
-        println("Game over");
+    if(!game.checkCollision()){
+        game.move();
+        background(bg);
+        game.renewShape();
+    } else {
+        background(bgover);
     }
+    
+    game.draw();
 }

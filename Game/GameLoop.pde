@@ -19,8 +19,7 @@ class GameLoop {
             this.shapes.add(randomShape());
         }
         
-        this.nave = new Nave(50, 50, 50, 50, randomColor());
-        
+        this.nave = new Nave(this.default_width, this.default_height, width / 2, height - this.default_height, randomColor());
     }
 
     /* Methods */
@@ -42,9 +41,11 @@ class GameLoop {
 
     public boolean checkCollision(){
         for (Shape shape : this.shapes){
-            if (shape.checkCollision(this.nave)){
-                return true; 
-            } 
+            if(!(shape.getCor() == this.nave.getCor())){
+                if (shape.checkCollision(this.nave)){
+                    return true; 
+                } 
+            }
         } 
 
         return false;
@@ -54,6 +55,8 @@ class GameLoop {
         for (Shape shape : this.shapes){
             shape.draw();
         }
+        
+        this.nave.draw();
     }
 
     public void move(){
