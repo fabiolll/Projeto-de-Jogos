@@ -23,6 +23,11 @@ class GameLoop {
     }
 
     /* Methods */
+    public void moveNave(float x, float y){
+        this.nave.setX(x);
+        this.nave.setY(y);
+    }
+    
     public void renewShape(){
         ArrayList toRemove = new ArrayList<Shape>();
         

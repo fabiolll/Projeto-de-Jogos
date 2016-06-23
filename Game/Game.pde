@@ -24,6 +24,7 @@ void draw(){
         game.move();
         background(bg);
         game.renewShape();
+        game.moveNave(mouseX, mouseY);
     } else {
         background(bgover);
     }
